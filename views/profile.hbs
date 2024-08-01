@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.name}}'s Profile</title>
+</head>
+<body>
+    <h1>{{user.name}}'s Profile</h1>
+    <h2>Blog Posts</h2>
+    {{#if blogposts.length}}
+        <ul>
+            {{#each blogposts}}
+                <li>
+                    <h3>{{this.title}}</h3>
+                    <p>{{this.content}}</p>
+                    <p>Category: {{this.category}}</p>
+                    <p>Published on: {{this.createdAt}} </p>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No blog posts found.</p>
+    {{/if}}
+</body>
+</html>
